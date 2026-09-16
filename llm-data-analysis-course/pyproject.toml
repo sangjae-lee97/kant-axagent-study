@@ -10,4 +10,8 @@ requires-python = ">=3.11"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["course_utils*"]
+include = [
+    "course_utils*",
+    "src",
+    "src."
+]
