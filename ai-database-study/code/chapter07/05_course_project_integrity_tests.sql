@@ -79,66 +79,66 @@ $$;
 
 -- 경계 테스트 A. 무료 강의 price=0, description=NULL, 무료 신청 recorded_amount=0 허용
 -- 기대: 성공 후 임시 행 삭제
--- INSERT INTO course_project.courses (id,instructor_id,title,description,level,price,opened_at)
--- VALUES (1801,202,'무료 체험 강의',NULL,'basic',0,'2026-05-01');
--- INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
--- VALUES (1802,103,1801,'2026-05-02','신청',0);
--- DELETE FROM course_project.enrollments WHERE id=1802;
--- DELETE FROM course_project.courses WHERE id=1801;
+ INSERT INTO course_project.courses (id,instructor_id,title,description,level,price,opened_at)
+ VALUES (1801,202,'무료 체험 강의',NULL,'basic',0,'2026-05-01');
+ INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
+ VALUES (1802,103,1801,'2026-05-02','신청',0);
+ DELETE FROM course_project.enrollments WHERE id=1802;
+ DELETE FROM course_project.courses WHERE id=1801;
 
 -- 오류 0. 학생 이름 NULL → NOT NULL
--- INSERT INTO course_project.students (id,name,email,joined_at)
--- VALUES (1900,NULL,'null-name@example.com',DATE '2026-03-20');
+ INSERT INTO course_project.students (id,name,email,joined_at)
+ VALUES (1900,NULL,'null-name@example.com',DATE '2026-03-20');
 
 -- 오류 1. 학생 이메일 중복 → uq_course_students_email
--- INSERT INTO course_project.students (id,name,email,joined_at)
--- VALUES (1901,'중복 학생','minji@example.com','2026-03-20');
+ INSERT INTO course_project.students (id,name,email,joined_at)
+ VALUES (1901,'중복 학생','minji@example.com','2026-03-20');
 
 -- 오류 2. 강사 이메일 중복 → uq_course_instructors_email
--- INSERT INTO course_project.instructors (id,name,email,specialty)
--- VALUES (1902,'중복 강사','gilbert@example.com','Database');
+ INSERT INTO course_project.instructors (id,name,email,specialty)
+ VALUES (1902,'중복 강사','gilbert@example.com','Database');
 
 -- 오류 3. 존재하지 않는 강사 참조 → fk_course_courses_instructor
--- INSERT INTO course_project.courses (id,instructor_id,title,description,level,price,opened_at)
--- VALUES (1903,999,'없는 강사 강의',NULL,'basic',10000,'2026-05-01');
+ INSERT INTO course_project.courses (id,instructor_id,title,description,level,price,opened_at)
+ VALUES (1903,999,'없는 강사 강의',NULL,'basic',10000,'2026-05-01');
 
 -- 오류 4. 허용되지 않은 난이도 → chk_course_courses_level
--- INSERT INTO course_project.courses (id,instructor_id,title,description,level,price,opened_at)
--- VALUES (1904,201,'잘못된 난이도',NULL,'expert',10000,'2026-05-01');
+ INSERT INTO course_project.courses (id,instructor_id,title,description,level,price,opened_at)
+ VALUES (1904,201,'잘못된 난이도',NULL,'expert',10000,'2026-05-01');
 
 -- 오류 5. 음수 강의 가격 → chk_course_courses_price
--- INSERT INTO course_project.courses (id,instructor_id,title,description,level,price,opened_at)
--- VALUES (1905,201,'잘못된 가격',NULL,'basic',-1,'2026-05-01');
+ INSERT INTO course_project.courses (id,instructor_id,title,description,level,price,opened_at)
+ VALUES (1905,201,'잘못된 가격',NULL,'basic',-1,'2026-05-01');
 
 -- 오류 6. 허용되지 않은 신청 상태 → chk_course_enrollments_status
--- INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
--- VALUES (1906,101,303,'2026-05-02','대기',150000);
+ INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
+ VALUES (1906,101,303,'2026-05-02','대기',150000);
 
 -- 오류 7. 음수 신청 기록 금액 → chk_course_enrollments_recorded_amount
--- INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
--- VALUES (1907,101,303,'2026-05-02','신청',-1);
+ INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
+ VALUES (1907,101,303,'2026-05-02','신청',-1);
 
 -- 오류 8. 존재하지 않는 학생 참조 → fk_course_enrollments_student
--- INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
--- VALUES (1908,999,303,'2026-05-02','신청',150000);
+ INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
+ VALUES (1908,999,303,'2026-05-02','신청',150000);
 
 -- 오류 9. 존재하지 않는 강의 참조 → fk_course_enrollments_course
--- INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
--- VALUES (1909,101,999,'2026-05-02','신청',150000);
+ INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
+ VALUES (1909,101,999,'2026-05-02','신청',150000);
 
 -- 오류 10. 같은 학생·강의의 두 번째 활성 신청 → uq_course_enrollments_active
 -- 학생 101·강의 302에는 활성 신청 1002가 존재합니다.
--- INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
--- VALUES (1910,101,302,'2026-05-03','수강중',120000);
+ INSERT INTO course_project.enrollments (id,student_id,course_id,enrolled_at,status,recorded_amount)
+ VALUES (1910,101,302,'2026-05-03','수강중',120000);
 
 -- 오류 11. 참조 중인 학생 삭제 → fk_course_enrollments_student / RESTRICT
--- DELETE FROM course_project.students WHERE id=101;
+ DELETE FROM course_project.students WHERE id=101;
 
 -- 오류 12. 참조 중인 강사 삭제 → fk_course_courses_instructor / RESTRICT
--- DELETE FROM course_project.instructors WHERE id=201;
+ DELETE FROM course_project.instructors WHERE id=201;
 
 -- 오류 후 수동 트랜잭션이 실패 상태라면 다음 테스트 전에 실행합니다.
--- ROLLBACK;
+ ROLLBACK;
 
 DO $$
 DECLARE
