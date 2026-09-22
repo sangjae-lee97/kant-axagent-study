@@ -5,6 +5,8 @@ SELECT current_database();
 SELECT current_schema();
 SHOW search_path;
 
+rollback;
+
 BEGIN;
 
 DO $$
