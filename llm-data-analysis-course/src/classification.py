@@ -50,7 +50,6 @@ CANDIDATE_NUMERIC_FEATURES = [
     "order_amount",
     "order_month",
     "order_dayofweek",
-    "days_since_signup",
 ]
 CANDIDATE_CATEGORICAL_FEATURES = [
     "gender",
@@ -369,12 +368,9 @@ def build_classification_dataset(
         model_data["order_date"] - model_data["signup_date"]
     ).dt.days
 
+    # Raw 데이터는 보존하고, 비정상 날짜 관계는 품질 이슈로만 기록합니다.
+    # days_since_signup은 신뢰할 수 없으므로 모델 feature에서는 사용하지 않습니다.
     negative_days = model_data["days_since_signup"].lt(0)
-    if negative_days.any():
-        raise ValueError(
-            "signup_date가 order_date보다 늦은 주문이 있습니다: "
-            f"{int(negative_days.sum())}건"
-        )
 
     numeric_features = [
         column
@@ -415,7 +411,7 @@ def build_classification_dataset(
                 int(model_data[TARGET_COLUMN].eq(1).sum()),
                 excluded_rows,
                 0,
-                0,
+                int(negative_days.sum()),
                 order_merge_check["unmatched_count"],
                 customer_merge_check["unmatched_count"],
             ],
