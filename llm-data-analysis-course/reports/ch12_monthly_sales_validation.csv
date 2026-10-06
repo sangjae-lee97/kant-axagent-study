@@ -1,0 +1,9 @@
+﻿check_item,value,status
+order_merge_row_count,True,PASS
+order_merge_unmatched,0,PASS
+completed_detail_rows,474,PASS
+included_status,completed,PASS
+order_date_missing_or_failure,0.0,PASS
+completed_source_total,148990000.0,PASS
+monthly_grouped_total,148990000.0,PASS
+monthly_total_difference,0.0,PASS

@@ -1,0 +1,5 @@
+﻿dataset,exists,rows,columns,column_list,missing_values,duplicated_rows
+customers,True,150,6,"customer_id, name, gender, age, city, signup_date",0,0
+products,True,100,4,"product_id, product_name, category, price",0,0
+orders,True,300,7,"order_id, customer_id, order_date, payment_method, order_status, order_month, order_dayofweek",0,0
+order_items,True,764,6,"order_item_id, order_id, product_id, quantity, unit_price, line_total",0,0

@@ -1,0 +1,5 @@
+﻿severity,category,line,detail
+review,import,1,외부 작업 가능 모듈 import: requests
+high,network,3,외부 URL 사용: requests.get
+high,operation,3,외부 네트워크 요청: requests.get
+high,file_write,4,"파일 쓰기 모드: open(..., 'wb')"

@@ -1,0 +1,8 @@
+﻿gate,status,meaning
+schema_and_keys,PASS,필수 구조·PK·관계
+aggregate_validation,PASS,completed 범위·병합·총합
+ml_leakage,REVIEW,문제별 prediction time·forbidden feature·split/selection 계약을 실제 생성 코드에 대조
+static_scan,BLOCKED,차단 심각도 탐지: high
+sandbox_and_package,REVIEW,격리 환경·쓰기 범위·네트워크·리소스 제한·공급망을 사람이 확인
+human_approval,REVIEW,자동 Evidence와 별도로 명시적 실행 승인 필요
+execution_decision,DO_NOT_EXECUTE,자동 승인하지 않음

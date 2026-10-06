@@ -1,0 +1,4 @@
+﻿purpose,left_dataset,right_dataset,key,left_has_key,right_has_key,missing_left_key_count,duplicated_parent_key_count,invalid_reference_count,status
+상품 정보와 주문 상세 연결,order_items,products,product_id,True,True,0,0,0,PASS
+주문 정보와 주문 상세 연결,order_items,orders,order_id,True,True,0,0,0,PASS
+주문 정보와 고객 정보 연결,orders,customers,customer_id,True,True,0,0,0,PASS
