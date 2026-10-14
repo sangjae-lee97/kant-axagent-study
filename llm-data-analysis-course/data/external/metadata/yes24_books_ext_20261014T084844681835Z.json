@@ -1,0 +1,20 @@
+{
+  "provider": "YES24",
+  "source_url_template": "https://www.yes24.com/product/goods/{상품번호}",
+  "collection_method": "requests+BeautifulSoup; manually authenticated Chrome+Selenium for restricted page",
+  "data_reference_date": null,
+  "collected_at_utc": null,
+  "collected_at_note": "원래 크롤링 실행 시 정확한 UTC를 기록하지 않음",
+  "snapshot_created_at_utc": "2026-10-14T08:48:44.681835+00:00",
+  "request_scope": "206 YES24 product detail pages; 4 supplementary fields",
+  "license_or_terms": "YES24 이용약관 사용자 확인; 재배포 허용 여부 미확인",
+  "raw_original_path": "C:\\dev\\kant-axagent-study\\llm-data-analysis-course\\data\\raw\\books_raw_ext.csv",
+  "snapshot_path": "C:\\dev\\kant-axagent-study\\llm-data-analysis-course\\data\\external\\raw\\yes24_books_ext_20261014T084844681835Z.csv",
+  "processed_path": "C:\\dev\\kant-axagent-study\\llm-data-analysis-course\\data\\processed\\books_best_cleaned.csv",
+  "sha256": "dc7546e2f829786fad429f42f391ad431c199d43178c6e187c3ad9cab22983e9",
+  "retention_period": "개인 학습 종료까지, 종료일 미정",
+  "access_scope": "개인 로컬 학습 용도",
+  "redistribution_allowed": null,
+  "deletion_policy": "학습 종료 후 삭제 예정, 실제 삭제 이력 없음",
+  "sensitive_content_reviewed": "리뷰어 식별정보 미수집; 성인인증 로그인 정상 수행"
+}
