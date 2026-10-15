@@ -1,0 +1,27 @@
+
+{
+  "stay": {
+    "params": {
+      "numOfRows": 100,
+      "pageNo": 1,
+      "MobileOS": "ETC",
+      "MobileApp": "ai-travel-planner",
+      "baseYm": "202509",
+      "areaCd": "11",
+      "tarSjrnDsIxCd": "2101",
+      "_type": "json"
+    }
+  },
+  "consumption": {
+    "params": {
+      "numOfRows": 100,
+      "pageNo": 1,
+      "MobileOS": "ETC",
+      "MobileApp": "ai-travel-planner",
+      "baseYm": "202509",
+      "areaCd": "11",
+      "tarExpDsIxCd": "2201",
+      "_type": "json"
+    }
+  }
+}
