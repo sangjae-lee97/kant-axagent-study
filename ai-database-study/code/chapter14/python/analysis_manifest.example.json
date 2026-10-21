@@ -1,0 +1,14 @@
+{
+  "source_database": "ai_database_book",
+  "source_user": "replace_with_readonly_user",
+  "source_view": "analysis_lab.enrollment_analysis_dataset",
+  "transaction_read_only": "on",
+  "analysis_start_date": "2026-01-01",
+  "analysis_end_date_exclusive": "2026-07-01",
+  "row_count": 24,
+  "expected_recorded_amount_sum": 3210000,
+  "generated_at_utc": "replace_with_utc_timestamp",
+  "csv_path": "replace_with_absolute_or_project_relative_path",
+  "sha256": "replace_with_csv_sha256",
+  "amount_semantics": "recorded_amount = enrollment-time recorded amount; cancellation does not zero it"
+}

@@ -1,0 +1,52 @@
+{
+  "source_database": "ai_database_book",
+  "source_view": "analysis_lab.enrollment_analysis_dataset",
+  "analysis_start_date": "2026-01-01",
+  "analysis_end_date_exclusive": "2026-07-01",
+  "row_count": 24,
+  "recorded_amount_sum": 3210000,
+  "status_counts": {
+    "완료": 12,
+    "수강중": 5,
+    "신청": 4,
+    "취소": 3
+  },
+  "monthly": [
+    {
+      "enrollment_month": "2026-01-01",
+      "enrollment_count": 3,
+      "recorded_amount_sum": 350000
+    },
+    {
+      "enrollment_month": "2026-02-01",
+      "enrollment_count": 4,
+      "recorded_amount_sum": 520000
+    },
+    {
+      "enrollment_month": "2026-03-01",
+      "enrollment_count": 5,
+      "recorded_amount_sum": 680000
+    },
+    {
+      "enrollment_month": "2026-04-01",
+      "enrollment_count": 4,
+      "recorded_amount_sum": 550000
+    },
+    {
+      "enrollment_month": "2026-05-01",
+      "enrollment_count": 4,
+      "recorded_amount_sum": 540000
+    },
+    {
+      "enrollment_month": "2026-06-01",
+      "enrollment_count": 4,
+      "recorded_amount_sum": 570000
+    }
+  ],
+  "completion": {
+    "completed_count": 12,
+    "avg_completion_days": 25.0,
+    "min_completion_days": 18,
+    "max_completion_days": 36
+  }
+}
