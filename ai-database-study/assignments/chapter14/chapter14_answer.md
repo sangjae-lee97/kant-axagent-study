@@ -1242,7 +1242,7 @@ https://github.com/<본인-GitHub-ID>/<본인-저장소>/blob/main/assignments/c
 실제 제출 URL:
 
 ```text
-
+https://github.com/sangjae-lee97/kant-axagent-study/blob/main/ai-database-study/assignments/chapter14/chapter14_answer.md
 ```
 
 > 교수자 템플릿 URL, 저장소 루트 URL, 이미지 URL을 제출하지 않습니다. 반드시 본인이 작성한 `chapter14_answer.md`의 정확한 URL을 제출합니다.
